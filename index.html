@@ -13,9 +13,21 @@
     <input type="text" id="nome" name="nome" required><br><br>
 
     <label for="cpf">CPF:</label><br>
-<input type="text" id="cpf" name="cpf" maxlength="14" required oninput="mascaraCPF(this)"><br><br>
+    <input type="text" id="cpf" name="cpf" maxlength="14" required oninput="mascaraCPF(this)" onpaste="return false" oninput="validarCPF(this)"><br><br>
 
-<script>
+    <label for="carro">Marca / Modelo do Carro:</label><br>
+    <input type="text" id="carro" name="carro" required><br><br>
+
+    <label for="placa">Placa do Carro:</label><br>
+    <input type="text" id="placa" name="placa" required pattern="[A-Z]{3}[0-9][0-9A-Z][0-9]{2}" title="Formato esperado: ABC1D23"><br><br>
+
+    <label for="servico">Serviço a ser realizado:</label><br>
+    <textarea id="servico" name="servico" rows="4" cols="40" required></textarea><br><br>
+
+    <button type="submit">Agendar</button>
+  </form>
+
+  <script>
     // Função para aplicar a máscara no CPF
     function mascaraCPF(campo) {
       let valor = campo.value.replace(/\D/g, ''); // Remove tudo que não for número
@@ -72,19 +84,7 @@
 
       return true;
     }
-
-
-    <label for="carro">Marca / Modelo do Carro:</label><br>
-    <input type="text" id="carro" name="carro" required><br><br>
-
-    <label for="placa">Placa do Carro:</label><br>
-    <input type="text" id="placa" name="placa" required pattern="[A-Z]{3}[0-9][0-9A-Z][0-9]{2}" title="Formato esperado: ABC1D23"><br><br>
-
-    <label for="servico">Serviço a ser realizado:</label><br>
-    <textarea id="servico" name="servico" rows="4" cols="40" required></textarea><br><br>
-
-    <button type="submit">Agendar</button>
-  </form>
+  </script>
 
 </body>
 </html>
