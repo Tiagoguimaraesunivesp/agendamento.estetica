@@ -2,78 +2,47 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Agendamento Automotivo</title>
+  <title>Estética Automotiva</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header>
+    <h1>Estética Automotiva Premium</h1>
+    <nav>
+      <a href="#servicos">Serviços</a>
+      <a href="#agendamento">Agendamento</a>
+    </nav>
+  </header>
 
-  <h1>Formulário de Agendamento Automotivo</h1>
+  <section id="servicos">
+    <h2>Nossos Serviços</h2>
+    <ul>
+      <li>Lavagem completa</li>
+      <li>Higienização interna</li>
+      <li>Polimento</li>
+      <li>Vitrificação</li>
+    </ul>
+  </section>
 
-  <form action="#" method="post">
-    <label for="nome">Nome do Cliente:</label><br>
-    <input type="text" id="nome" name="nome" required><br><br>
+  <section id="agendamento">
+    <h2>Agende seu Horário</h2>
+    <form id="formAgendamento">
+      <input type="text" id="nome" placeholder="Seu nome" required>
+      <input type="date" id="data" required>
+      <input type="time" id="hora" required>
+      <button type="submit">Agendar</button>
+    </form>
 
-    <label for="cpf">CPF:</label><br>
-<input type="text" id="cpf" name="cpf" maxlength="14" required oninput="mascaraCPF(this)"><br><br>
+    <div id="agendamentos">
+      <h3>Agendamentos Confirmados</h3>
+      <ul id="listaAgendamentos"></ul>
+    </div>
+  </section>
 
-<script>
-  function mascaraCPF(campo) {
-    let valor = campo.value.replace(/\D/g, ''); // Remove tudo que não é dígito
+  <footer>
+    <p>&copy; 2025 Estética Automotiva</p>
+  </footer>
 
-    if (valor.length > 11) valor = valor.slice(0, 11); // Limita a 11 números
-
-    // Aplica a máscara: 000.000.000-00
-    valor = valor.replace(/(\d{3})(\d)/, '$1.$2');
-    valor = valor.replace(/(\d{3})(\d)/, '$1.$2');
-    valor = valor.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
-
-    campo.value = valor;
-  }
-</script>
-    <label for="marca">Marca do Carro:</label><br>
-     <select id="marca" name="marca" required>
-       <option value="">Selecione uma marca</option>
-       <option value="chevrolet">Chevrolet</option>
-       <option value="fiat">Fiat</option>
-       <option value="ford">Ford</option>
-       <option value="honda">Honda</option>
-       <option value="hyundai">Hyundai</option>
-       <option value="jeep">Jeep</option>
-       <option value="nissan">Nissan</option>
-       <option value="peugeot">Peugeot</option>
-       <option value="renault">Renault</option>
-       <option value="toyota">Toyota</option>
-       <option value="volkswagen">Volkswagen</option>
-     </select><br><br>
-
-    <label for="modelo">Modelo do Carro:</label><br>
-    <input type="text" id="modelo" name="modelo" required><br><br>
-
-
-    <label for="placa">Placa do Carro:</label><br>
-    <input type="text" id="placa" name="placa" required pattern="[A-Z]{3}[0-9][0-9A-Z][0-9]{2}" title="Formato esperado: ABC1D23"><br><br>
-
-    <label>Serviços a serem realizados:</label><br>
-        <input type="checkbox" id="lavagemSimples" name="servicos" value="lavagem simples">
-        <label for="lavagemSimples">Lavagem simples</label><br>
-        
-        <input type="checkbox" id="lavagemCompleta" name="servicos" value="lavagem completa">
-        <label for="lavagemCompleta">Lavagem completa</label><br>
-        
-        <input type="checkbox" id="polimento" name="servicos" value="polimento">
-        <label for="polimento">Polimento</label><br>
-        
-        <input type="checkbox" id="cristalizacao" name="servicos" value="cristalização">
-        <label for="cristalizacao">Cristalização</label><br>
-        
-        <input type="checkbox" id="vitrificacao" name="servicos" value="vitrificação">
-        <label for="vitrificacao">Vitrificação</label><br>
-        
-        <input type="checkbox" id="higienizacao" name="servicos" value="higienização de interior">
-        <label for="higienizacao">Higienização</label><br><br>
-
-
-    <button type="submit">Agendar</button>
-  </form>
-
+  <script src="script.js"></script>
 </body>
 </html>
