@@ -2,11 +2,30 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Meu Primeiro Site</title>
+  <title>Agendamento Automotivo</title>
 </head>
 <body>
-  <h1>Olá, mundo!</h1>
-  <p>Essa é minha página no GitHub Pages.</p>
+
+  <h1>Formulário de Agendamento Automotivo</h1>
+
+  <form action="#" method="post">
+    <label for="nome">Nome do Cliente:</label><br>
+    <input type="text" id="nome" name="nome" required><br><br>
+
+    <label for="cpf">CPF:</label><br>
+    <input type="text" id="cpf" name="cpf" required pattern="\d{11}" title="Digite 11 números"><br><br>
+
+    <label for="carro">Marca / Modelo do Carro:</label><br>
+    <input type="text" id="carro" name="carro" required><br><br>
+
+    <label for="placa">Placa do Carro:</label><br>
+    <input type="text" id="placa" name="placa" required pattern="[A-Z]{3}[0-9][0-9A-Z][0-9]{2}" title="Formato esperado: ABC1D23"><br><br>
+
+    <label for="servico">Serviço a ser realizado:</label><br>
+    <textarea id="servico" name="servico" rows="4" cols="40" required></textarea><br><br>
+
+    <button type="submit">Agendar</button>
+  </form>
+
 </body>
 </html>
-criação do index.html
