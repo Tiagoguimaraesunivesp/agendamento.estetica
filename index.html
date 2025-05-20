@@ -79,10 +79,24 @@
 
             <button onclick="openModal('loginModal')" class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-full transition">Área do Cliente</button>
     
-            <a href="https://tiagoguimaraesunivesp.github.io/controle.estetica/" class="bg-purple-500 hover:bg-purple-600 px-4 py-2 rounded-full transition">
+            <a href="#" onclick="checkAccess()" class="bg-purple-500 hover:bg-purple-600 px-4 py-2 rounded-full transition">
             Meu Controle
             </a>
-            </nav>
+
+            <script>
+            function checkAccess() {
+                // Isso é APENAS UM EXEMPLO SIMPLES E INSEGURO!
+            
+            const username = prompt("Usuário:");
+            const password = prompt("Senha:");
+
+            if (username === "seuusuario" && password === "suasenha") { // Senhas hardcoded = RUIM!
+            window.location.href = "https://tiagoguimaraesunivesp.github.io/controle.estetica/";
+            } else {
+                    alert("Usuário ou senha incorretos!");
+                    }
+            }
+            </script>
             <button class="md:hidden text-2xl" onclick="toggleMobileMenu()">
             <i class="fas fa-bars"></i>
             </button>
